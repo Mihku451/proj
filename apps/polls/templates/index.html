@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {% load static %}
+
+    <link id="logo" rel="shortcut icon" href="{% static 'img/logo-dark.png' %}" type="image">
+    <title> - Вход</title>
+
+    <link rel="stylesheet" href="{% static 'css/global.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}"/>
+
+    <script defer src="{% static 'js/global.js' %}"></script>
+    <script defer src="{% static 'js/auth.js' %}"></script>
+</head>
+<body>
+<header>
+    <a href="/" class="logo">Списки ВУЗ.ru</a>
+    <div class="nav">
+        <a class="nav-el" href="/">ваши данные</a>
+        <a class="nav-el" href="/">смотреть списки</a>
+    </div>
+    <div id="theme-switch" class="theme-switch">Темная тема</div>
+    <div class="user">
+        <h1 class="username">имя пользователя</h1>
+        <p>Выйти</p>
+    </div>
+</header>
+<main>
+
+            <div id="forms" class="forms">
+                <div class="form-container toright" id="">
+                    <form class="auth-form" action="">
+                        <h1>Войти</h1>
+                        <p>Нет аккаунта? <span class="span-action" id="pg-2">Создайте его!</span></p>
+                        <input type="text" class="input-field" placeholder="Логин">
+                        <input type="password" class="input-field" placeholder="Пароль">
+                        <div class="action-buttons">
+                            <input id="submit-login" type="submit" class="main-action" value="Войти">
+                            <input type="button" class="secondary-action" value="Забыли пароль?">
+                        </div>
+                    </form>
+                </div>
+                <div class="form-container toright" id="">
+                    <form class="auth-form" action="">
+                        <h1>Регистрация</h1>
+                        <p>Уже есть аккаунт? <span class="span-action" id="pg-1">Войти.</span></p>
+                        <input type="email" class="input-field" placeholder="Почта">
+                        <input type="text" class="input-field" placeholder="Логин">
+                        <input type="password" class="input-field" placeholder="Пароль">
+                        <input type="password" class="input-field" placeholder="Повторите пароль">
+                        <div class="action-buttons">
+                            <input type="submit" class="main-action" value="зарегистрироваться">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="img-container">
+                <img src="{% static 'img/bg.jpg' %}" alt="">
+            </div>
+        </main>
+
+</body>
+</html>
