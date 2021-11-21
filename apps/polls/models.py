@@ -5,16 +5,14 @@ from django.utils.datetime_safe import datetime
 
 
 class Exercise(models.Model):
-    name = models.CharField(max_length=32)
+    name = models.CharField(max_length=42)
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
     creation_date = models.DateTimeField(default=datetime.now)
-    timer = models.SmallIntegerField(default=360, blank=True)
+    timer = models.SmallIntegerField(default=None, blank=True)
     # неположительные значение <=> неограниченные кол-во попыток,
     limit_of_tries = models.SmallIntegerField(default=1, blank=True)
     # отвечает за показывание правильных ответов теста после прохождения
     visible_valid_answers = models.BooleanField(default=False, blank=True)
-    # для выборки
-    tag_name = models.CharField(default='', max_length=32)
 
 
 class Question(models.Model):

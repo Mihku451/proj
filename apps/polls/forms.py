@@ -6,7 +6,11 @@ from apps.polls.models import Exercise, Question, TYPES
 
 
 class ExerciseForm(forms.Form):
-    pass
+    name = forms.CharField(max_length=42, required=True)
+    timer = forms.IntegerField(min_value=120, required=False)
+    visible_valid_answers = forms.BooleanField(default=False)
+    limit_of_tries=forms.IntegerField(min_value=1, required=False)
+    tag_name=forms.CharField(min_length=32)
 
 
 class QuestionForm(forms.Form):
