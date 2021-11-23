@@ -1,14 +1,19 @@
 from django.contrib.auth.models import User
-
+from django.conf import settings
 from django.db import models
 from django.utils.datetime_safe import datetime
+
+
+# class Profile(models.Model):
+#  user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+# grade = models.CharField(max_length=3)
+# photo = models.ImageField(upload_to='users/%Y/%m/%d', blank=True)
 
 
 class Exercise(models.Model):
     name = models.CharField(max_length=42)
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
     creation_date = models.DateTimeField(default=datetime.now)
-    timer = models.SmallIntegerField(default=None, blank=True)
     # неположительные значение <=> неограниченные кол-во попыток,
     limit_of_tries = models.SmallIntegerField(default=1, blank=True)
     # отвечает за показывание правильных ответов теста после прохождения

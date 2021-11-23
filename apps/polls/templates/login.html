@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/auth.css' %}"/>
 
-
     <script defer src="{% static 'js/global.js' %}"></script>
     <script defer src="{% static 'js/auth.js' %}"></script>
 </head>
@@ -37,16 +36,27 @@
     </div>
 </header>
 <main>
-    <div class="">
-    <a href="{% url 'login' %}">Войти</a>
-    <a href="{% url 'register' %}">регистрация</a>
-        <h1>Мой профиль</h1>
-
-    Имя пользователя: {{ request.user.username }} <br>
-    Email: {{ request.user.email }}
-    </div>
 
 
+<div id="forms" class="forms">
+<div class="form-container">
+    <div class="auth-form">
+                    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Логин">
+        <input type="password" name="password" placeholder="Пароль">
+        <input type="submit" value="Войти">
+    </form>
+
+
+
+
+                </div>
+            </div>
+</div>
+            <div class="img-container">
+                <img src="{% static 'img/bg.jpg' %}" alt="">
+            </div>
         </main>
 
 </body>

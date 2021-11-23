@@ -27,7 +27,10 @@ input {
     cursor: pointer;
     color: var(--accent);
 }
-
+.form-container{
+width: 50vw;
+height:100vh;
+}
 .forms {
     position: relative;
     display: flex;

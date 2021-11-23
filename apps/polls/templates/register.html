@@ -9,7 +9,7 @@
     <link id="logo" rel="shortcut icon" href="{% static 'img/logo-dark.png' %}" type="image">
     <title> - Вход</title>
 
-    <link rel="stylesheet" href="{% static 'css/global.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/global.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/auth.css' %}"/>
 
@@ -37,16 +37,28 @@
     </div>
 </header>
 <main>
-    <div class="">
-    <a href="{% url 'login' %}">Войти</a>
-    <a href="{% url 'register' %}">регистрация</a>
-        <h1>Мой профиль</h1>
 
-    Имя пользователя: {{ request.user.username }} <br>
-    Email: {{ request.user.email }}
+<div id="forms" class="forms">
+<div class="form-container">
+    <div class="auth-form">
+                    <form method="post">
+        {% csrf_token %}
+        Имя пользователя: <input type="text" name="username"><br>
+        Email: <input type="email" name="email"><br>
+        Пароль: <input type="password" name="password"><br>
+        Пароль еще раз: <input type="password" name="password2"><br>
+
+        <input type="submit" value="Регистрация">
+    </form>
     </div>
 
 
+
+                </div>
+</div>
+            <div class="img-container">
+                <img src="{% static 'img/bg.jpg' %}" alt="">
+            </div>
         </main>
 
 </body>
